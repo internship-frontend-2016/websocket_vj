@@ -1,14 +1,16 @@
-# gulp-template
-gulpのテンプレート（ES6版）
+# websocketでチャットを作成
 
+##忘れないこと
+*node_modulesファイルはありません。
+*packageの確認お願いします。
+*express入れてください（dependenciesに書き込むの忘れました。）
 
 ## 各バージョン
 
 以下のバージョンで動作します
 
 ```
-Node.js: v4.4.5
-npm: v2.15.5
+Node.js: v4.5.0
 ```
 
 
@@ -21,15 +23,16 @@ npm: v2.15.5
 │   ├── tasks      // 実行されるタスク
 │   └── util
 │
-├─ node_modules
 │
-└─ src    // 開発用ディレクトリ
-    ├── img    // そのままbuild/imgへコピーされる
-    ├── js     // main.jsをコンパイルしてbuildへ
-    └── sass   // sassファイルをコンパイルしてbuildへ
+├── src    // 開発用ディレクトリ
+│   ├── img    // そのままbuild/imgへコピーされる
+│   ├── js     // main.jsをコンパイルしてbuildへ
+│   ├── sass   // sassファイルをコンパイルしてbuildへ
+│   └── index.ejs   // コンパイルしてbuildへ
+└─index.js //websocket用サーバー
 ```
 
-### ビルドツール  
+### ビルドツール
 
 * Gulp              （ タスクランナー )
 * gulp-ejs          （ ejs -> html コンパイル )
@@ -40,46 +43,13 @@ npm: v2.15.5
 * gulp.spritesmith  （ スプライト画像を作成 )
 
 
-## インストール
-
-npm install する
-
-```
-$ cd [プロジェクのディレクトリネーム]
-$ npm i
-```
 
 ## 実行
-
-
-### sprite画像を作成
+###srcファイルをコンパイル
 ```
-$ gulp sprite
+>gulp
 ```
-
-### gulp起動
-BrowserSyncでサーバーを起動し、sass, ejs, jsファイルをwatchする
-
+###buildファイルをサーバーに
 ```
-$ gulp
+>node index.js
 ```
-
-### Buildする
-納品用に、buildディレクトリを空にしてから再度コンパイルする
-jsファイルはminifyされる
-
-```
-$ npm run build
-```
-
-
-## 変えるとこ
-#### gulpのパス設定
-gulp/config.js
-```
-└─ gulp
-   └── config.js  // 設定ファイル
-```
-コンパイルに用いる各ディレクトリパス, autoprefixerに用いるブラウザバージョンを変える
-
-#### jquery, normalize.css のバージョンを最新に

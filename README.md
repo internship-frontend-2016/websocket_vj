@@ -1,9 +1,21 @@
 # websocketでチャットを作成
 
 ##忘れないこと
-*node_modulesファイルはありません。
-*packageの確認お願いします。
-*express入れてください（dependenciesに書き込むの忘れました。）
+* node_modulesファイルはありません。
+* packageの確認お願いします。
+
+## npmインストール
+
+###expressをインストール
+```
+npm install express --save
+```
+
+###socket.ioをインストール
+```
+npm install socket.io --save
+```
+
 
 ## 各バージョン
 
@@ -49,7 +61,7 @@ Node.js: v4.5.0
 ```
 >gulp
 ```
-###buildファイルをサーバーに
+###Node.jsでwebsocket用のサーバーを立てる
 ```
 >node index.js
 ```

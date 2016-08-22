@@ -1,7 +1,6 @@
 # websocketでチャットを作成
 
 ##忘れないこと
-* node_modulesファイルはありません。
 * packageの確認お願いします。
 
 ## npmインストール

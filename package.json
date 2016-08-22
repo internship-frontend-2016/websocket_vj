@@ -54,5 +54,9 @@
   },
   "author": "",
   "license": "BSD",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "engines": {
+   "node": "4.5.0",
+   "npm": "2.15.9"
+ }
 }

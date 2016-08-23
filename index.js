@@ -14,9 +14,9 @@ io.on("connection",function(socket){
 		io.emit("chat message",msg);
 		//socket.broadcast.emit("chat message",msg);
 	});
-	socket.on("onVjAction",function(msg){
-		console.log("onVjAction::"+msg);
-		io.emit("onVjAction",msg);
+	socket.on("onVjAction",function(data){
+		console.log("onVjAction::"+data);
+		io.emit("onVjAction","hello~");
 		//socket.broadcast.emit("chat message",msg);
 	});
 	socket.on("disconnect",function(){

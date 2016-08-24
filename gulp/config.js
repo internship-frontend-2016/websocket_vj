@@ -51,13 +51,7 @@ module.exports = {
         entries: jsSrc + '/vj-screen.js',
         build: build + '/js',
         outputName: 'vj-screen.js'
-      },
-      {
-        entries: jsSrc + '/minMatrixb.js',
-        build: build + '/js',
-        outputName: 'minMatrixb.js'
       }
-
     ]
   },
 
@@ -71,7 +65,8 @@ module.exports = {
   jsLibConcat: {
     name: 'lib.js',
     srcs: [
-      './node_modules/jquery/dist/jquery.min.js'
+//      './node_modules/jquery/dist/jquery.min.js',
+      '../src/js/lib/minMatrixb.js'
     ],
     build: build + '/js'
   }

@@ -375,7 +375,7 @@ function render(){
 	var count2=0;
 
 	//恒常ループ
-	function a(){
+	(function loop(){
 		var scaleValue=1.0;
 		if(fft_flag==true){
 			analyser.getByteFrequencyData(frequency);
@@ -479,8 +479,10 @@ function render(){
 
 		gl.flush();
 		//requestAnimationFrame(a);
-		setTimeout(a,1000/30);
-	}
+		//requestAnimationFrame(arguments.callee);
+		requestAnimationFrame(loop);
+		//setTimeout(a,1000/30);
+	})();
 
 	//シェーダを生成する関数
 	function create_shader(id){

@@ -158,10 +158,10 @@ function video_actions(_video){
 function action(){
 	load_num++;
 	/*
-	if(load_num==14){
+	if(load_num==2
 		render();
 	}*/
-	if(load_num==5){
+	if(load_num==2){
 		render();
 	}
 }

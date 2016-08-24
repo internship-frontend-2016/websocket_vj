@@ -6,14 +6,17 @@ $("form").submit(function(){
 	return false;
 });*/
 $("#hello").on("click",function(){
-	socket.emit("onVjAction","hello");
+	socket.emit("vjActionFromClient","hello");
 	return false
 });
 $("#bye").on("click",function(){
-	socket.emit("onVjAction","bye");
+	socket.emit("vjActionFromClient","bye");
 	return false
 });
-socket.on("onVjAction",function(msg){
+//サーバーからデータを受け取る
+/*
+socket.on("vjActionFromClient",function(msg){
 //			$('#messages').append($('<li>').text(msg));
 	console.log(msg);
 });
+*/

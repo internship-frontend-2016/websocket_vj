@@ -15,9 +15,9 @@ io.on("connection",function(socket){
 		//socket.broadcast.emit("chat message",msg);
 	});
 	//vj-controller側から受け取ったもの
-	socket.on("onVjAction",function(data){
-		console.log("onVjAction::"+data);
-		io.emit("onVjAction",data);
+	socket.on("vjActionFromClient",function(data){
+		console.log("vjActionFromClient::"+data);
+		io.emit("vjActionFromServer",data);
 		//socket.broadcast.emit("chat message",msg);
 	});
 	socket.on("disconnect",function(){

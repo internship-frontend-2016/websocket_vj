@@ -66,7 +66,7 @@ module.exports = {
     name: 'lib.js',
     srcs: [
 //      './node_modules/jquery/dist/jquery.min.js',
-      '../src/js/lib/minMatrixb.js'
+      jsSrc+'/lib/minMatrixb.js'
     ],
     build: build + '/js'
   }

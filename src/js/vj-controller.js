@@ -5,12 +5,12 @@ $("form").submit(function(){
 //			$("#m").val("");
 	return false;
 });*/
-$("#hello").on("click",function(){
-	socket.emit("vjActionFromClient","hello");
+$("#first").on("click",function(){
+	socket.emit("vjActionFromClient",1);
 	return false
 });
-$("#bye").on("click",function(){
-	socket.emit("vjActionFromClient","bye");
+$("#second").on("click",function(){
+	socket.emit("vjActionFromClient",2);
 	return false
 });
 //サーバーからデータを受け取る

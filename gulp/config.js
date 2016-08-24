@@ -10,7 +10,7 @@ module.exports = {
     'copy' : src + '/copy',
     'sass' : src + '/sass/**/*.scss',
     'ejs'  : [src + '/**/*.ejs', '!' + src + '/**/_*.ejs'],
-    'imgCopy'  : [src + '/img/**/*.{gif,jpg,jpeg,png,svg}', '!' +src+ '/img/sprite/**/*'],
+    'imgCopy'  : [src + '/img/**/*.{gif,jpg,jpeg,png,svg,mp4}', '!' +src+ '/img/sprite/**/*'],
     'img'  : [src + '/img/**/*.{gif,jpg,jpeg,png,svg}', '!' +src+ '/img/sprite/**/*']
   },
 
@@ -51,7 +51,13 @@ module.exports = {
         entries: jsSrc + '/vj-screen.js',
         build: build + '/js',
         outputName: 'vj-screen.js'
+      },
+      {
+        entries: jsSrc + '/minMatrixb.js',
+        build: build + '/js',
+        outputName: 'minMatrixb.js'
       }
+
     ]
   },
 

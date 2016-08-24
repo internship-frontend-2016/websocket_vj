@@ -238,7 +238,7 @@ function action(){
 }
 function video_create(_src){
 	//ビデオエレメントを生成
-	video=document.createElement("video");
+	var video=document.createElement("video");
 	//ビデオタイプのチェック
 	var videoExt=checkVideoType(video);
 	if(videoExt===null){
@@ -375,7 +375,7 @@ function render(){
 	var count2=0;
 
 	//恒常ループ
-	(function(){
+	function a(){
 		var scaleValue=1.0;
 		if(fft_flag==true){
 			analyser.getByteFrequencyData(frequency);
@@ -478,8 +478,9 @@ function render(){
 		ext.drawElementsInstancedANGLE(gl.TRIANGLES,cubeData.i.length,gl.UNSIGNED_SHORT,0,instanceCount);
 
 		gl.flush();
-		requestAnimationFrame(arguments.callee);
-	})();
+		//requestAnimationFrame(a);
+		setTimeout(a,1000/30);
+	}
 
 	//シェーダを生成する関数
 	function create_shader(id){

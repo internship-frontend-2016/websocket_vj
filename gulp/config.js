@@ -43,9 +43,14 @@ module.exports = {
   browserify: {
     bundleConfigs: [
       {
-        entries: jsSrc + '/main.js',
+        entries: jsSrc + '/vj-controller.js',
         build: build + '/js',
-        outputName: 'main.js'
+        outputName: 'vj-controller.js'
+      },
+      {
+        entries: jsSrc + '/vj-screen.js',
+        build: build + '/js',
+        outputName: 'vj-screen.js'
       }
     ]
   },

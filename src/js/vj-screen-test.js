@@ -62,6 +62,49 @@ function KeyDown(e){
 		video2.play();
 		select_video=2;
 	}
+/*
+	else if(e.keyCode==51){
+		video3.play();
+		select_video=3;
+	}else if(e.keyCode==52){
+		video4.play();
+		select_video=4;
+	}else if(e.keyCode==53){
+		video5.play();
+		select_video=5;
+	}else if(e.keyCode==54){
+		video6.play();
+		select_video=6;
+	}else if(e.keyCode==55){
+		video7.play();
+		select_video=7;
+	}else if(e.keyCode==56){
+		video8.play();
+		select_video=8;
+	}else if(e.keyCode==57){
+		video9.play();
+		select_video=9;
+	}else if(e.keyCode==48){
+		video10.play();
+		select_video=10;
+	}else if(e.keyCode==81){
+		//qボタン
+		video11.play();
+		select_video=11;
+	}else if(e.keyCode==87){
+		//wボタン
+		video12.play();
+		select_video=12;
+	}else if(e.keyCode==69){
+		//eボタン
+		video13.play();
+		select_video=13;
+	}else if(e.keyCode==82){
+		//rボタン
+		video14.play();
+		select_video=14;
+	}
+*/
 	//sボタンは83
 	if(e.keyCode==83&&fft_flag==false){
 		fft_flag=true;
@@ -135,14 +178,42 @@ function init(){
 	c=document.getElementById("canvas");
 	c.width=720;
 	c.height=480;
-
+//	c.width=window.innerWidth;
+//	c.height=window.innerHeight;
 
 	video1=video_create("../img/original.");
 	video2=video_create("../img/hand.");
+	/*
+	video3=video_create("pokemon.");
+	video4=video_create("cardcapter2.");
+	video5=video_create("cardcapter3.");
+	video6=video_create("cardcapter4.");
+	video7=video_create("danshi.");
+	video8=video_create("giphy.");
+	video9=video_create("magic.");
+	video10=video_create("nichijo.");
+	video11=video_create("oso.");
+	video12=video_create("oso2.");
+	video13=video_create("Sailormoon.");
+	video14=video_create("Sailormoon2.");
+*/
 
 	video_actions(video1);
 	video_actions(video2);
-	
+	/*
+	video_actions(video3);
+	video_actions(video4);
+	video_actions(video5);
+	video_actions(video6);
+	video_actions(video7);
+	video_actions(video8);
+	video_actions(video9);
+	video_actions(video10);
+	video_actions(video11);
+	video_actions(video12);
+	video_actions(video13);
+	video_actions(video14);
+*/
 		//ボタンを押したかどうか
 	document.addEventListener("keydown" , KeyDown);
 }
@@ -161,7 +232,7 @@ function action(){
 	if(load_num==14){
 		render();
 	}*/
-	if(load_num==5){
+	if(load_num==2){
 		render();
 	}
 }
@@ -268,9 +339,37 @@ function render(){
 
 	var videoTexture1=null;
 	var videoTexture2=null;
+	/*
+	var videoTexture3=null;
+	var videoTexture4=null;
+	var videoTexture5=null;
+	var videoTexture6=null;
+	var videoTexture7=null;
+	var videoTexture8=null;
+	var videoTexture9=null;
+	var videoTexture10=null;
+	var videoTexture11=null;
+	var videoTexture12=null;
+	var videoTexture13=null;
+	var videoTexture14=null;
+*/
 
 	create_textureVideo(video1,1);
 	create_textureVideo(video2,2);
+/*
+	create_textureVideo(video3,3);
+	create_textureVideo(video4,4);
+	create_textureVideo(video5,5);
+	create_textureVideo(video6,6);
+	create_textureVideo(video7,7);
+	create_textureVideo(video8,8);
+	create_textureVideo(video9,9);
+	create_textureVideo(video10,10);
+	create_textureVideo(video11,11);
+	create_textureVideo(video12,12);
+	create_textureVideo(video13,13);
+	create_textureVideo(video14,14);
+*/
 	//カウンタの宣言
 	var count=0;
 	var count2=0;
@@ -298,6 +397,56 @@ function render(){
 			gl.bindTexture(gl.TEXTURE_2D,videoTexture2);
 			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video2);
 		}
+		/*
+		else if(select_video==3){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture3);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video3);
+		}else if(select_video==4){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture4);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video4);
+		}else if(select_video==5){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture5);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video5);
+		}else if(select_video==6){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture6);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video6);
+		}else if(select_video==7){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture7);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video7);
+		}else if(select_video==8){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture8);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video8);
+		}else if(select_video==9){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture9);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video9);
+		}else if(select_video==10){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture10);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video10);
+		}else if(select_video==11){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture11);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video11);
+		}else if(select_video==12){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture12);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video12);
+		}else if(select_video==13){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture13);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video13);
+		}else if(select_video==14){
+			gl.bindTexture(gl.TEXTURE_2D,null);
+			gl.bindTexture(gl.TEXTURE_2D,videoTexture14);
+			gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video14);
+		}*/
 
 
 		//ビュー×プロジェクション座標変換行列
@@ -437,7 +586,43 @@ function render(){
             case 2:
                 videoTexture2 = videoTexture;
                 break;
-
+                /*
+            case 3:
+                videoTexture3 = videoTexture;
+                break;
+            case 4:
+                videoTexture4 = videoTexture;
+                break;
+            case 5:
+                videoTexture5 = videoTexture;
+                break;
+            case 6:
+                videoTexture6 = videoTexture;
+                break;
+            case 7:
+                videoTexture7 = videoTexture;
+                break;
+            case 8:
+                videoTexture8 = videoTexture;
+                break;
+            case 9:
+                videoTexture9 = videoTexture;
+                break;
+            case 10:
+                videoTexture10 = videoTexture;
+                break;
+            case 11:
+                videoTexture11 = videoTexture;
+                break;
+            case 12:
+                videoTexture12 = videoTexture;
+                break;
+            case 13:
+                videoTexture13 = videoTexture;
+                break;
+            case 14:
+                videoTexture14 = videoTexture;
+                break;*/
             default:
                 break;
         }

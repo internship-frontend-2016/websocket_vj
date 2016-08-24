@@ -51,6 +51,11 @@ module.exports = {
         entries: jsSrc + '/vj-screen.js',
         build: build + '/js',
         outputName: 'vj-screen.js'
+      },
+      {
+        entries: jsSrc + '/vj-screen-test.js',
+        build: build + '/js',
+        outputName: 'vj-screen-test.js'
       }
     ]
   },
